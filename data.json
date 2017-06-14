@@ -4,14 +4,16 @@
   "creator": "Asia",
   "goal": 1000000,
   "categories": ["fun", "travel", "photography", "diving"],
-  "status": 0
+  "status": 0,
+  "deadline": 100
   },{
     "title": "New Computer",
     "description": "Buy me a new macbook!",
     "creator": "Jason",
     "goal": 2000000,
     "categories": ["apple", "laptop", "programming", "macbook"],
-    "status": 0
+    "status": 0,
+    "deadline": 7
   },
   {
     "title": "Buy me a house",
@@ -19,7 +21,8 @@
     "creator": "Micky Mouse",
     "goal": 2000,
     "categories": ["cabin", "colorado", "snow"],
-    "status": 500
+    "status": 500,
+    "deadline": 1000
   }
 ]
 

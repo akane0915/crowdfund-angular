@@ -1,0 +1,12 @@
+<h2>{{(projectToDisplay | async)?.title}}</h2>
+<h2>Goal: ${{(projectToDisplay | async)?.goal}}</h2>
+<h3>Countdown: {{(projectToDisplay | async)?.deadline}} days!</h3>
+<p>Description: {{(projectToDisplay | async)?.description}}</p>
+<p>Creator: {{(projectToDisplay | async)?.creator}}</p>
+<div>Categories
+  <ul>
+    <li *ngFor="let category of ((projectToDisplay| async)?.categories )">
+      {{category}}
+    </li>
+  </ul>
+</div>
