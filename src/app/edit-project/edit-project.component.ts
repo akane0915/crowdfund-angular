@@ -22,4 +22,11 @@ export class EditProjectComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  beginDelete(projectToDelete) {
+    if(confirm("Are you sure you want to delete this project?")){
+    this.dataService.deleteProject(projectToDelete);
+    this.router.navigate(['']);
+    }
+  }
+
 }

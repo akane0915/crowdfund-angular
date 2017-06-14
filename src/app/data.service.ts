@@ -33,4 +33,9 @@ export class DataService {
                               });
   }
 
+  deleteProject(project) {
+    let projectFromFirebase = this.getProjectById(project.$key);
+    projectFromFirebase.remove();
+  }
+
 }
