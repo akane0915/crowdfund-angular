@@ -14,8 +14,12 @@ export class DataService {
     return this.projects;
   }
 
-  getProjectById(projectId) {
+  getProjectById(projectId: string) {
     return this.database.object('projects/' + projectId);
+  }
+
+  sendToDatabase(project: Project) {
+    this.projects.push(project);
   }
 
 }

@@ -1,0 +1,9 @@
+<h3>Create Your New Project</h3>
+
+<input #projectTitle placeholder="Project Title">
+<input #projectDescription placeholder="Project Description">
+<input #projectCreator placeholder="Project Creator">
+<input #projectGoal placeholder="Project $Goal">
+<input #projectCategory placeholder="Project Category">
+<input #projectDeadline placeholder="Days Remaining">
+<button (click)="submitForm(projectTitle.value, projectDescription.value, projectCreator.value, projectGoal.value, projectCategory.value, projectDeadline.value ); projectTitle.value=''; projectDescription.value=''; projectCreator.value=''; projectGoal.value=''; projectCategory.value=''; projectDeadline.value=''; ">Submit</button>
