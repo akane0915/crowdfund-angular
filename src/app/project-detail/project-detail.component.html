@@ -1,16 +1,16 @@
-<h2>{{(projectToDisplay | async)?.title}}</h2>
-<h2>Goal: ${{(projectToDisplay | async)?.goal}}</h2>
-<h3>Countdown: {{(projectToDisplay | async)?.deadline}} days!</h3>
-<p>Description: {{(projectToDisplay | async)?.description}}</p>
-<p>Creator: {{(projectToDisplay | async)?.creator}}</p>
+<h2>{{projectToDisplay?.title}}</h2>
+<h2>Goal: ${{projectToDisplay?.goal}}</h2>
+<h3>Countdown: {{projectToDisplay?.deadline}} days!</h3>
+<p>Description: {{projectToDisplay?.description}}</p>
+<p>Creator: {{projectToDisplay?.creator}}</p>
 <div>Categories
   <ul>
-    <li *ngFor="let category of ((projectToDisplay| async)?.categories )">
+    <li *ngFor="let category of projectToDisplay?.categories">
       {{category}}
     </li>
   </ul>
 </div>
 
-<div *ngIf="projectToDisplay | async">
-  <app-edit-project [selectedProject]="projectToDisplay | async" ></app-edit-project>
+<div *ngIf="projectToDisplay">
+  <app-edit-project [selectedProject]="projectToDisplay" ></app-edit-project>
 </div>

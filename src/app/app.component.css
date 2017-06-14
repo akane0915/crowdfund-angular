@@ -1,3 +1,8 @@
 .nav-item {
   padding: 20px 20px 0 0;
+  display: inline-block;
+}
+
+.nav-item:hover {
+  cursor: pointer;
 }

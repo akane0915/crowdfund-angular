@@ -1,0 +1,7 @@
+.project-link {
+  background-color: #eee;
+}
+
+.project-link:hover {
+  cursor: pointer;
+}
