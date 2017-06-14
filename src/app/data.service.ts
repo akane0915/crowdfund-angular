@@ -22,4 +22,15 @@ export class DataService {
     this.projects.push(project);
   }
 
+  updateProject(project) {
+    let projectFromFirebase = this.getProjectById(project.$key);
+    projectFromFirebase.update({title: project.title,
+                              description: project.description,
+                              creator: project.creator,
+                              goal: project.goal,
+                              categories: project.categories,
+                              deadline: project.deadline
+                              });
+  }
+
 }

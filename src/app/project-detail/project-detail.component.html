@@ -10,3 +10,7 @@
     </li>
   </ul>
 </div>
+
+<div *ngIf="projectToDisplay | async">
+  <app-edit-project [selectedProject]="projectToDisplay | async" ></app-edit-project>
+</div>

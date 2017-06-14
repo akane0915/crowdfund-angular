@@ -3,6 +3,7 @@ import { Project } from '../project.model';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { DataService } from '../data.service';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { DataService } from '../data.service';
 })
 export class ProjectDetailComponent implements OnInit {
   projectId: string;
-  projectToDisplay;
+  projectToDisplay: FirebaseObjectObservable<any>;
   categories;
 
   constructor(private route: ActivatedRoute, private location: Location, private dataService: DataService) { }
