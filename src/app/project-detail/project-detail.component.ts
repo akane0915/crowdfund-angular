@@ -14,7 +14,8 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 })
 export class ProjectDetailComponent implements OnInit {
   projectId: string;
-  projectToDisplay: Project;
+  projectToDisplay: any;
+  currentProjectStatus: number;
 
   constructor(private route: ActivatedRoute, private location: Location, private dataService: DataService) { }
 
@@ -23,10 +24,12 @@ export class ProjectDetailComponent implements OnInit {
       this.projectId = urlParameters['id'];
     });
   this.dataService.getProjectById(this.projectId).subscribe(dataLastEmittedFromObserver => {this.projectToDisplay = dataLastEmittedFromObserver});
+
   }
 
-  beginUpdatingStatus(projectToUpdateStatus) {
-    this.dataService.updateProjectStatus(projectToUpdateStatus);
+  beginUpdatingStatus(value) {
+    this.currentProjectStatus = parseInt(this.projectToDisplay.status) + parseInt(value);
+    this.dataService.updateProjectStatus(this.currentProjectStatus, this.projectToDisplay);
   }
 
 }

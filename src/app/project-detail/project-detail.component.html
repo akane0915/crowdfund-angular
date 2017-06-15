@@ -4,8 +4,8 @@
 
 <div class="fund-me-form">
   <label>Fund This Project: $</label>
-  <input [(ngModel)]="projectToDisplay.status">
-  <button (click)="beginUpdatingStatus(projectToDisplay)">Submit</button>
+  <input #valueToAdd>
+  <button (click)="beginUpdatingStatus(valueToAdd.value); valueToAdd.value='' ">Submit</button>
 </div>
 
 <h3>Countdown: {{projectToDisplay?.deadline}} days!</h3>
