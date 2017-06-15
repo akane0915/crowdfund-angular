@@ -28,7 +28,7 @@ export class DataService {
                               description: project.description,
                               creator: project.creator,
                               goal: project.goal,
-                              categories: project.categories,
+                              category: project.category,
                               deadline: project.deadline
                               });
   }

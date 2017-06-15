@@ -12,17 +12,14 @@ import { Location } from '@angular/common';
   providers: [DataService]
 })
 export class NewProjectComponent implements OnInit {
-  newCategory:any[] = [];
-
 
   constructor(private dataService: DataService, private router: Router, private location: Location) { }
 
   ngOnInit() {
   }
 
-  submitForm(title: string, description:string, creator:string, goal:number, category:string[], deadline:string) {
-    this.newCategory.push(category)
-    let newProject: Project = new Project(title, description, creator, goal, this.newCategory, deadline);
+  submitForm(title: string, description:string, creator:string, goal:number, category:string, deadline:string) {
+    let newProject: Project = new Project(title, description, creator, goal, category, deadline);
     this.dataService.sendToDatabase(newProject);
     this.router.navigate(['']);
   }

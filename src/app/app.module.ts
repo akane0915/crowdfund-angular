@@ -12,6 +12,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { NewProjectComponent } from './new-project/new-project.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
+import { CatFilterPipe } from './cat-filter.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -19,7 +20,7 @@ export const firebaseConfig = {
   projectId: masterFirebaseConfig.projectId,
   databaseURL: masterFirebaseConfig.databaseURL,
   storageBucket: masterFirebaseConfig.storageBucket
-}
+};
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ export const firebaseConfig = {
     WelcomeComponent,
     ProjectDetailComponent,
     NewProjectComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    CatFilterPipe
   ],
   imports: [
     BrowserModule,

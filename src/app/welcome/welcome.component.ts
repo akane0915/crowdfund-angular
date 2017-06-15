@@ -11,16 +11,29 @@ import { Router } from '@angular/router';
   providers: [DataService]
 })
 export class WelcomeComponent implements OnInit {
-  projects: FirebaseListObservable<any[]>;
+  projects: Project[];
+  filterByCategory: string = 'all';
+  uniqueCategories: string[] = [];
 
   constructor(public dataService: DataService, public router: Router) { }
 
   ngOnInit() {
-    this.projects = this.dataService.getProjects();
+    this.dataService.getProjects().subscribe(dataLastEmittedFromObserver => { this.projects = dataLastEmittedFromObserver;
+      this.projects.forEach((project) => {
+        if (this.uniqueCategories.includes(project.category)) {
+        } else {
+          this.uniqueCategories.push(project.category);
+        }
+      });
+    });
   }
 
   goToDetailPage(clickedProject) {
     this.router.navigate(['projects',clickedProject.$key]);
+  }
+
+  onChange(category) {
+    this.filterByCategory = category;
   }
 
 }

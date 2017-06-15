@@ -1,17 +1,16 @@
-
-  <h3>Edit Project</h3>
-  <p>{{selectedProject.title}}</p>
-  <label>Title:</label>
-  <input [(ngModel)]="selectedProject.title">
-  <label>Description:</label>
-  <input [(ngModel)]="selectedProject.description">
-  <label>Creator:</label>
-  <input [(ngModel)]="selectedProject.creator">
-  <label>Goal $:</label>
-  <input [(ngModel)]="selectedProject.goal">
-  <label>Category:</label>
-  <input [(ngModel)]="selectedProject.categories">
-  <label>Deadline:</label>
-  <input [(ngModel)]="selectedProject.deadline">
-  <button (click)="beginUpdate(selectedProject)">Update</button>
-  <button class="btn btn-danger" (click)="beginDelete(selectedProject)">Delete Project</button>
+<h3>Edit Project</h3>
+<p>{{selectedProject.title}}</p>
+<label>Title:</label>
+<input [(ngModel)]="selectedProject.title">
+<label>Description:</label>
+<input [(ngModel)]="selectedProject.description">
+<label>Creator:</label>
+<input [(ngModel)]="selectedProject.creator">
+<label>Goal $:</label>
+<input [(ngModel)]="selectedProject.goal">
+<label>Category:</label>
+<input [(ngModel)]="selectedProject.category">
+<label>Deadline:</label>
+<input [(ngModel)]="selectedProject.deadline">
+<button (click)="beginUpdate(selectedProject)">Update</button>
+<button class="btn btn-danger" (click)="beginDelete(selectedProject)">Delete Project</button>

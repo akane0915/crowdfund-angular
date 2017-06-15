@@ -3,7 +3,7 @@
   "description": "Send me to Australia!",
   "creator": "Asia",
   "goal": 1000000,
-  "categories": ["fun", "travel", "photography", "diving"],
+  "category": "travel",
   "status": 0,
   "deadline": 100
   },{
@@ -11,7 +11,7 @@
     "description": "Buy me a new macbook!",
     "creator": "Jason",
     "goal": 2000000,
-    "categories": ["apple", "laptop", "programming", "macbook"],
+    "category": "macbook",
     "status": 0,
     "deadline": 7
   },
@@ -20,7 +20,7 @@
     "description": "Want to live in a cabin in the woods!",
     "creator": "Micky Mouse",
     "goal": 2000,
-    "categories": ["cabin", "colorado", "snow"],
+    "category": "real estate",
     "status": 500,
     "deadline": 1000
   }

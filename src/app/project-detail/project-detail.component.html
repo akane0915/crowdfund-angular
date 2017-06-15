@@ -3,13 +3,8 @@
 <h3>Countdown: {{projectToDisplay?.deadline}} days!</h3>
 <p>Description: {{projectToDisplay?.description}}</p>
 <p>Creator: {{projectToDisplay?.creator}}</p>
-<div>Categories
-  <ul>
-    <li *ngFor="let category of projectToDisplay?.categories">
-      {{category}}
-    </li>
-  </ul>
-</div>
+<p>Category: {{projectToDisplay?.category}}</p>
+
 
 <div *ngIf="projectToDisplay">
   <app-edit-project [selectedProject]="projectToDisplay" ></app-edit-project>

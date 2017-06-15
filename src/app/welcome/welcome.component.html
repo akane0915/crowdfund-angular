@@ -1,4 +1,12 @@
-<div class="panel panel-default project-link" *ngFor="let project of projects | async " (click)="goToDetailPage(project)">
+<div class="category-filter">
+  <select (change)="onChange($event.target.value)">
+    <option value="all">All Categories</option>
+    <option *ngFor="let category of uniqueCategories" value="{{category}}" >{{category}}</option>
+  </select>
+</div>
+
+
+<div class="panel panel-default project-link" *ngFor="let project of projects | catFilter:filterByCategory" (click)="goToDetailPage(project)">
   <div class="panel-body">
     <h3>{{project.title}}</h3>
   </div>
