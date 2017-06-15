@@ -16,6 +16,7 @@ export class ProjectDetailComponent implements OnInit {
   projectId: string;
   projectToDisplay: any;
   currentProjectStatus: number;
+  statusBarNumber: any;
 
   constructor(private route: ActivatedRoute, private location: Location, private dataService: DataService) { }
 
@@ -27,9 +28,19 @@ export class ProjectDetailComponent implements OnInit {
 
   }
 
+  ngDoCheck() {
+    this.statusBarNumber = ((this.projectToDisplay.status / parseInt(this.projectToDisplay.goal)) * 100);
+  }
+
+
   beginUpdatingStatus(value) {
     this.currentProjectStatus = parseInt(this.projectToDisplay.status) + parseInt(value);
     this.dataService.updateProjectStatus(this.currentProjectStatus, this.projectToDisplay);
+
+    this.statusBarNumber = ((this.currentProjectStatus / parseInt(this.projectToDisplay.goal)) * 100)
   }
+
+
+
 
 }
