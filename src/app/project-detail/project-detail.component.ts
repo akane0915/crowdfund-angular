@@ -25,4 +25,8 @@ export class ProjectDetailComponent implements OnInit {
   this.dataService.getProjectById(this.projectId).subscribe(dataLastEmittedFromObserver => {this.projectToDisplay = dataLastEmittedFromObserver});
   }
 
+  beginUpdatingStatus(projectToUpdateStatus) {
+    this.dataService.updateProjectStatus(projectToUpdateStatus);
+  }
+
 }

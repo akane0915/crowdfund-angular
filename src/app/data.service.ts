@@ -38,4 +38,9 @@ export class DataService {
     projectFromFirebase.remove();
   }
 
+  updateProjectStatus(projectToUpdate) {
+    let projectFromFirebase = this.getProjectById(projectToUpdate.$key);
+    projectFromFirebase.update({status: projectToUpdate.status});
+  }
+
 }

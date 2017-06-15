@@ -1,5 +1,13 @@
 <h2>{{projectToDisplay?.title}}</h2>
 <h2>Goal: ${{projectToDisplay?.goal}}</h2>
+<h2>Amount Raised: ${{projectToDisplay?.status}}</h2>
+
+<div class="fund-me-form">
+  <label>Fund This Project: $</label>
+  <input [(ngModel)]="projectToDisplay.status">
+  <button (click)="beginUpdatingStatus(projectToDisplay)">Submit</button>
+</div>
+
 <h3>Countdown: {{projectToDisplay?.deadline}} days!</h3>
 <p>Description: {{projectToDisplay?.description}}</p>
 <p>Creator: {{projectToDisplay?.creator}}</p>
